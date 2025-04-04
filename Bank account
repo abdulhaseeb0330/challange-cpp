@@ -1,0 +1,106 @@
+#include<iostream>
+using namespace std;
+int main() {
+	int accnum1 = 1, accnum2 = 2, bal1 = 1000, bal2 = 1000,acc,pass=1,chek,wdam,depam,taccnum,tam;
+
+	cout << "Welcome to FCB"<<endl;
+	cout << "Enter Account Number"<<endl;
+	cin >> acc;
+	if (acc == 1) {
+		cout << "Enter Password" << endl;
+		cin >> pass;
+		if (pass == 1) {
+			cout << "Press" << endl;
+			cout << "1 Check Balance \n 2 Withdraw\n 3 Deposit \n 4 Transfer" << endl;
+			cin >> chek;
+			if (chek == 1) {
+				cout << "Your Balance is = " << bal1 << endl;
+			}
+			else if (chek == 2) {
+				cout << "Enter Amount Want to Withdraw" << endl;
+				cin >> wdam;
+				bal1 = bal1 - wdam;
+				cout << "Take Your Money " << endl;
+				cout << "Current Ballance = " << bal1 << endl;
+			}
+			else if (chek==3) {
+				cout << "Enter Amount Want to Deposit" << endl;
+				cin >> depam;
+				bal1 = bal1 + depam;
+				cout << "Give Amount " << endl;
+				cout << "Current Ballance = " << bal1 << endl;
+			}
+			else if (chek == 4) {
+				cout << "Enter Account Number, You Want to Transfer" << endl;
+				cin >> taccnum;
+				if (taccnum == accnum2) {
+					cout << "Enter Amount to Transfer" << endl;
+					cin >> tam;
+					bal1 = bal1 - tam;
+					bal2 = bal2 + tam;
+					cout << "Amount Transfered Sucessfully" << endl;
+					cout << "Current Balance is = " << bal1 << endl;
+				}
+				else {
+					cout << "invalid command";
+				}
+			}
+			else {
+				cout << "Invalid Password";
+			}
+		}
+
+	}
+
+	//acc2
+	else if (acc == 2) {
+		cout << "Enter Password" << endl;
+		cin >> pass;
+		if (pass == 2) {
+			cout << "Press" << endl;
+			cout << "1 Check Balance \n 2 Withdraw\n 3 Deposit \n 4 Transfer" << endl;
+			cin >> chek;
+			if (chek == 1) {
+				cout << "Your Balance is = " << bal2 << endl;
+			}
+			else if (chek == 2) {
+				cout << "Enter Amount Want to withdraw" << endl;
+				cin >> wdam;
+				bal2 = bal2 - wdam;
+				cout << "Take Your Money " << endl;
+				cout << "Current Ballance = " << bal2 << endl;
+			}
+			else if (chek == 3) {
+				cout << "Enter Amount Want to Deposit" << endl;
+				cin >> depam;
+				bal2 = bal2 + depam;
+				cout << "Give Amount " << endl;
+				cout << "Current Ballance = " << bal2 << endl;
+			}
+			else if (chek == 4) {
+				cout << "Enter Account Number" << endl;
+				cin >> taccnum;
+				if (taccnum == accnum1) {
+					cout << "Enter Amount to Transfer" << endl;
+					cin >> tam;
+					bal2 = bal2 - tam;
+					bal1 = bal1 + tam;
+					cout << "Amount Transfered Sucessfully" << endl;
+					cout << "Current Balance is = " << bal2 << endl;
+				}
+				else {
+					cout << "account not exist";
+				}
+			}
+			else {
+				cout << "Invalid Password";
+			}
+		}
+	}
+	else {
+		cout << "NO ACCOUNT FOUND";
+	}
+
+
+	return 0;
+}
